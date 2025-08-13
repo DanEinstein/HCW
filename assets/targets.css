@@ -1,0 +1,84 @@
+/* Unique styles for the Target page */
+
+/* Target Hero Section */
+#targets-hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px;
+    overflow: hidden;
+    color: white; /* Ensures text is readable on the dark overlay */
+}
+
+#targets-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Background image for the target page */
+    background-image: url('../images/targets.jpg'); /* Replace with a suitable image */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    /* Blurring and overlay for text readability */
+    filter: blur(4px);
+    background-color: rgba(0, 0, 0, 0.5); 
+    
+    z-index: -1; 
+}
+
+/* Hero Content - styles are consistent with other pages */
+.hero-content h1,
+.hero-content p {
+    color: var(--text-color-light);
+}
+
+/* Target Content Section */
+.targets-content {
+    padding: 80px 50px;
+    background-color: #f9f9f9;
+}
+
+.targets-content .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+}
+
+.target-item {
+    max-width: 300px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.target-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.target-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--navbar-color);
+}
+
+.target-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-color-dark);
+}

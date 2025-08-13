@@ -1,0 +1,105 @@
+/* Unique styles for the About Us page */
+
+/* About Hero Section */
+#about-hero {
+    /* Using the same class name from the homepage for consistency */
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px; /* Essential to prevent content from hiding behind the fixed navbar */
+    overflow: hidden;
+}
+
+#about-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Unique background image for the About Us page */
+    background-image: url('../images/doctor.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    /* Blurring and overlay for text readability */
+    filter: blur(4px);
+    background-color: rgba(0, 0, 0, 0.5); 
+    
+    z-index: -1;
+}
+
+/* About Content Section */
+.about-content {
+    padding: 80px 50px;
+    background-color: #f9f9f9; /* A light gray background for a clean look */
+    text-align: center;
+}
+
+.about-content .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-content h2 {
+    font-size: 2.5rem; /* Larger font for main headings */
+    margin-bottom: 20px;
+    color: var(--navbar-color);
+}
+
+.about-content p {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Team Members Section */
+.team-members {
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.team-member {
+    text-align: center;
+    max-width: 250px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for a polished look */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adds a smooth hover transition */
+}
+
+.team-member:hover {
+    transform: translateY(-10px); /* Lifts the card on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* A stronger shadow on hover */
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Creates a circular image */
+    object-fit: cover; /* Ensures the image fills the circular space without distortion */
+    border: 4px solid var(--accent-color); /* A more subtle border */
+    margin-bottom: 15px;
+}
+
+.team-member h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    color: var(--navbar-color);
+}
+
+.team-member p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0;
+}

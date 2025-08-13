@@ -1,0 +1,85 @@
+/* Homepage specific styles */
+
+/* Hero Section */
+#Home {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px;
+    overflow: hidden;
+    color: white;
+}
+
+#Home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    background-image: url('../images/emergency.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.4);
+    
+    z-index: -1;
+}
+
+/* Hero Content */
+.hero-content {
+    padding: 20px;
+    max-width: 800px;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    color:var(--navbar-color);
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: var(--text-color-light);
+}
+
+/* Button Group */
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Main Content Section */
+.content-section {
+    padding: 80px 50px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.content-section .container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.content-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--navbar-color);
+}
+
+.content-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color-dark);
+}

@@ -1,0 +1,101 @@
+/* Unique styles for the Contacts page */
+
+/* Contact Hero Section */
+#contacts-hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px;
+    overflow: hidden;
+    color: white; /* Ensures text is readable on the dark overlay */
+}
+
+#contacts-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Background image for the contacts page */
+    background-image: url('../images/contact2.jpg'); /* Replace with a suitable image */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    /* Blurring and overlay for text readability */
+    filter: blur(4px);
+    background-color: rgba(0, 0, 0, 0.4); 
+    
+    z-index: -1; 
+}
+
+/* Hero Content - styles are consistent with other pages */
+.hero-content h1,
+.hero-content p {
+    color: var(--text-color-light);
+}
+
+/* Contact Form Section */
+.content-section {
+    padding: 80px 50px;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-card {
+    max-width: 600px;
+    width: 100%;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.contact-card h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--navbar-color);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--text-color-dark);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--navbar-color);
+    outline: none;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 15px;
+    border-radius: 4px;
+}

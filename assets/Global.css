@@ -68,3 +68,44 @@ h1, h2, h3 {
     color: var(--accent-color); /* A more subtle hover color */
     transform: scale(1.05); /* Adds a slight visual effect */
 }
+/* --- Footer Styles --- */
+.main-footer {
+    background-color: var(--navbar-color);
+    color: var(--text-color-light);
+    padding: 2rem 0;
+}
+
+.main-footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allows content to wrap on smaller screens */
+    gap: 15px;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: var(--text-color-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}

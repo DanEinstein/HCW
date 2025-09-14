@@ -8,55 +8,69 @@
     <link rel="stylesheet" href="about.css">
 </head>
 <body>
-
     <nav class="navbar">
-        <a href="index.html" class="logo" aria-label="HCW Home">HCW</a>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="goals.html">Goals</a></li>
-            <li><a href="targets.html">Target</a></li>
-            <li><a href="Contacts.html">Contacts</a></li>
-        </ul>
+        <div class="container">
+            <a href="index.html" class="logo" aria-label="HCW Home">HCW</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="goals.html">Goals</a></li>
+                <li><a href="targets.html">Target</a></li>
+                <li><a href="Contacts.html">Contacts</a></li>
+                <li>
+                    <button id="theme-toggle" class="nav-toggle" aria-label="Toggle theme">
+                        <span id="theme-text">Dark Mode</span></button>
+                </li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
     </nav>
 
     <section id="about-hero" class="hero-section">
         <div class="hero-content">
             <h1>Our Story: Compassion in Every Click</h1>
-            <p>
-                At HCW, our journey began with a simple belief: that quality healthcare information should be accessible to everyone. We are a team of dedicated healthcare professionals, developers, and writers committed to bridging the gap between medical knowledge and everyday people.
-            </p>
         </div>
     </section>
 
-    <section class="about-content">
-        <div class="container">
-            <div class="mission-statement">
-                <h2>Our Mission</h2>
-                <p>
-                    To empower individuals to make informed health decisions through reliable, easy-to-understand content and innovative digital tools.
-                </p>
-            </div>
-
-            <hr>
-
-            <div class="team-section">
-                <h2>Meet the Team</h2>
-                <div class="team-members">
-                    <div class="team-member">
-                        <img src="../images/african doctor.jpg" alt="Photo of Dr. Judy Gathoni, Chief Medical Officer">
-                        <h3>Dr. Judy Gathoni</h3>
-                        <p>Chief Medical Officer</p>
-                    </div>
-                    <div class="team-member">
-                        <img src="../images/equipments.jpg" alt="Photo of Danson Githuka, Head of Technology">
-                        <h3>Danson Githuka</h3>
-                        <p>Head of Technology</p>
+    <main>
+        <section class="about-content">
+            <div class="container">
+                <div class="mission-statement">
+                    <h2>Our Mission</h2>
+                    <p>
+                        At HCW, our journey began with a simple belief: that quality healthcare information should be accessible to everyone. We
+                        are a team of dedicated healthcare professionals, developers, and writers committed to bridging the gap between medical
+                        knowledge and everyday people.
+                        The digital age has transformed how we access information, and we saw an opportunity to create a platform that not only
+                        informs but also empowers individuals to take charge of their health.
+                        Our mission is to empower individuals to make informed health decisions through reliable, easy-to-understand content and innovative digital tools.
+                    </p>
+                </div>
+    
+                <hr>
+    
+                <div class="team-section">
+                    <h2>Meet the Team</h2>
+                    <div class="team-members">
+                        <div class="team-member">
+                            <img src="../images/african doctor.jpg" alt="Photo of Dr. Judy Gathoni, Chief Medical Officer">
+                            <h3>Dr. Judy Gathoni</h3>
+                            <p>Chief Medical Officer</p>
+                        </div>
+                        <div class="team-member">
+                            <img src="../images/equipments.jpg" alt="Photo of Danson Githuka, Head of Technology">
+                            <h3>Danson Githuka</h3>
+                            <p>Head of Technology</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
     <footer class="main-footer">
     <div class="container">
         <div class="footer-content">
@@ -68,6 +82,8 @@
             </div>
         </div>
     </div>
+    
 </footer>
+    <script src="script.js"></script>
 </body>
 </html>

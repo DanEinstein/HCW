@@ -1,111 +1,357 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-
 :root {
-    --navbar-color: #0077b6; /* A clear, professional blue */
-    --accent-color: #b3e0ff; /* A lighter, subtle blue for accents */
-    --text-color-light: #f4f4f4;
-    --text-color-dark: #333;
+    --primary-color: #3B82F6;
+    --secondary-color: #60A5FA;
+    --dark-bg: #1F2937;
+    --dark-text: #F3F4F6;
+    --light-bg: #FFFFFF;
+    --light-text: #1F2937;
+    --gray-text: #6B7280;
 }
 
-/* Basic CSS Reset */
-* {
+body {
+    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    line-height: 1.6;
+    color: var(--light-text);
+    background-color: var(--light-bg);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Global Styles */
-body {
-    font-family: 'Poppins', sans-serif; /* Use the imported font */
-    line-height: 1.6; /* Improves readability of body text */
-    color: var(--text-color-dark);
+.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
 }
 
-/* Headings and Typography */
-h1, h2, h3 {
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    color: var(--navbar-color);
+.dark-mode .navbar {
+    background-color: #374151;
 }
 
-/* Navbar Styles */
+.dark-mode .nav-links a {
+    color: var(--dark-text);
+}
+
+.dark-mode .content-section,
+.dark-mode .footer-content p,
+.dark-mode .footer-content a {
+    color: var(--dark-text);
+}
+
+.dark-mode .content-section h2 {
+    color: var(--secondary-color);
+}
+
+.dark-mode .content-card {
+    background-color: #374151;
+    box-shadow: 0 10px 15px -3px rgba(255, 255, 255, 0.1), 0 4px 6px -2px rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .content-card h3 {
+    color: var(--secondary-color);
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--navbar-color);
-    padding: 15px 30px;
-    
-    /* Corrected syntax */
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
-    z-index: 1000;
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: bold;
-    color: var(--text-color-light);
-    text-decoration: none; /* Add this if the logo is a link */
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
 }
 
 .nav-links {
     list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-    gap: 20px;
+    gap: 1.5rem;
+    align-items: center;
 }
 
-.nav-links li a {
-    color: var(--text-color-light);
+.nav-links a {
+    color: var(--gray-text);
     text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s ease, transform 0.3s ease;
+    font-weight: 500;
+    transition: color 0.2s ease;
 }
 
-.nav-links li a:hover {
-    color: var(--accent-color); /* A more subtle hover color */
-    transform: scale(1.05); /* Adds a slight visual effect */
+.nav-links a:hover {
+    color: var(--primary-color);
 }
-/* --- Footer Styles --- */
+
+.mobile-menu-toggle {
+    display: none; /* Hidden by default on larger screens */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1002; /* Ensure it's above the nav-links */
+    position: relative; /* Needed for z-index and absolute positioning of children */
+    width: 25px;
+    height: 21px;
+}
+
+.mobile-menu-toggle .hamburger {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--light-text); /* Black in light mode */
+    margin: 6px 0;
+    transition: transform 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+    border-radius: 2px;
+}
+
+.dark-mode .mobile-menu-toggle .hamburger {
+    background-color: var(--dark-text); /* White in dark mode */
+}
+
+/* Animation to 'X' when .active is on nav-links */
+.mobile-menu-toggle[aria-expanded="true"] .hamburger:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.mobile-menu-toggle[aria-expanded="true"] .hamburger:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle[aria-expanded="true"] .hamburger:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+
+.nav-toggle {
+    background: none;
+    border: 1px solid #ccc;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-toggle:hover {
+    background-color: #f3f4f6;
+}
+
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://placehold.co/1920x1080/1F2937/F3F4F6?text=Medical+Excellence) no-repeat center center/cover;
+    color: #fff;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 6rem;
+}
+
+.hero-content {
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content h1 {
+    font-size: 2.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .btn-group {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+    }
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: 1px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #2563eb;
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.content-section {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.content-section h2 {
+    font-size: 2.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.content-section p {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    font-size: 1.125rem;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    .cards-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.content-card {
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.content-card:hover {
+    transform: scale(1.05);
+}
+
+.content-card h3 {
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
 .main-footer {
-    background-color: var(--navbar-color);
-    color: var(--text-color-light);
+    background-color: var(--primary-color);
+    color: #fff;
     padding: 2rem 0;
-}
-
-.main-footer .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    text-align: center;
 }
 
 .footer-content {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap; /* Allows content to wrap on smaller screens */
-    gap: 15px;
+    justify-content: space-between;
 }
 
-.footer-content p {
-    margin: 0;
-    font-size: 0.9rem;
-}
-
-.social-links {
-    display: flex;
-    gap: 20px;
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row;
+    }
 }
 
 .social-links a {
-    color: var(--text-color-light);
+    color: #fff;
     text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
+    margin-left: 1rem;
+    transition: color 0.2s ease;
 }
 
 .social-links a:hover {
-    color: var(--accent-color);
+    color: #bfdbfe;
+}
+
+/* Responsive Navigation Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--light-bg);
+        padding: 1rem 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1001;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .mobile-menu-toggle {
+        display: block;
+    }
+    .navbar .container {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero-content {
+        padding: 1rem;
+    }
 }

@@ -1,101 +1,149 @@
-/* Unique styles for the Contacts page */
-
-/* Contact Hero Section */
+/* Contacts page specific styles */
+/* Unique hero background for the contacts page */
 #contacts-hero {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding-top: 80px;
-    overflow: hidden;
-    color: white; /* Ensures text is readable on the dark overlay */
-}
-
-#contacts-hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    
-    /* Background image for the contacts page */
-    background-image: url('../images/contact2.jpg'); /* Replace with a suitable image */
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    
-    /* Blurring and overlay for text readability */
-    filter: blur(4px);
-    background-color: rgba(0, 0, 0, 0.4); 
-    
-    z-index: -1; 
-}
-
-/* Hero Content - styles are consistent with other pages */
-.hero-content h1,
-.hero-content p {
-    color: var(--text-color-light);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/contact2.jpg');
 }
 
 /* Contact Form Section */
 .content-section {
-    padding: 80px 50px;
-    background-color: #f9f9f9;
-    display: flex;
-    justify-content: center;
+    padding: 4rem 0;
+    background-color: var(--light-bg);
+}
+
+.content-section .container {
+    max-width: 600px;
 }
 
 .contact-card {
-    max-width: 600px;
     width: 100%;
-    padding: 40px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 2.5rem;
+    background-color: var(--light-bg);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: left;
 }
 
 .contact-card h2 {
-    font-size: 2.2rem;
-    margin-bottom: 30px;
+    font-size: 2rem;
+    margin-bottom: 2rem;
     text-align: center;
-    color: var(--navbar-color);
+    color: var(--primary-color);
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
 }
 
 .form-group label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
-    color: var(--text-color-dark);
+    color: var(--light-text);
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-family: 'Poppins', sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-family: 'Inter', sans-serif;
     font-size: 16px;
     transition: border-color 0.3s ease;
+    box-sizing: border-box;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-    border-color: var(--navbar-color);
+    border-color: var(--primary-color);
     outline: none;
 }
 
 .btn-primary {
     width: 100%;
     padding: 15px;
-    border-radius: 4px;
+    border-radius: 0.5rem;
+}
+
+/* Social Connect Section */
+.social-connect {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.social-connect h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--gray-text);
+}
+
+.social-links-contact {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-links-contact a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.social-links-contact a:hover {
+    color: var(--secondary-color);
+}
+
+/* Dark Mode Styles */
+.dark-mode .content-section {
+    background-color: var(--dark-bg);
+}
+
+.dark-mode .contact-card {
+    background-color: #374151;
+    box-shadow: 0 10px 15px -3px rgba(255, 255, 255, 0.1), 0 4px 6px -2px rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .contact-card h2,
+.dark-mode .social-connect h3 {
+    color: var(--secondary-color);
+}
+
+.dark-mode .form-group label,
+.dark-mode .social-links-contact a {
+    color: var(--dark-text);
+}
+
+.dark-mode .form-group input,
+.dark-mode .form-group textarea {
+    background-color: #4B5563;
+    border-color: #6B7280;
+    color: var(--dark-text);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .content-section {
+        padding: 2rem 0.5rem;
+    }
+    .content-section .container {
+        max-width: 100%;
+        padding: 0;
+    }
+    .contact-card {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    .contact-card h2 {
+        font-size: 1.25rem;
+    }
+    .form-group input,
+    .form-group textarea {
+        font-size: 1rem;
+        padding: 10px;
+    }
+    .btn-primary {
+        padding: 12px;
+        font-size: 1rem;
+    }
 }

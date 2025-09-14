@@ -1,58 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HCW - Your Health, Our Priority</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Global.css">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="index.css">
+    
 </head>
-<body>
 
+<body class="light-mode">
+
+    <!-- Navigation Bar -->
     <nav class="navbar">
-        <a href="index.html" class="logo" aria-label="HCW Home">HCW</a>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="goals.html">Goals</a></li>
-            <li><a href="targets.html">Target</a></li>
-            <li><a href="Contacts.html">Contacts</a></li>
-        </ul>
-    </nav>
-
-    <section id="Home" class="hero-section">
-        <div class="hero-content">
-            <h1>Your health is our priority</h1>
-            <p>
-                Welcome to HCW, where compassionate care meets medical excellence. We are dedicated to keeping you and your loved ones healthy through personalized learning, new technologies in the medical field, and a team of experienced professionals who always update you on the latest trends in healthcare.
-            </p>
-            <div class="btn-group">
-                <a href="about.html" class="btn btn-primary">Learn More</a>
-                <a href="Contacts.html" class="btn btn-secondary">Talk to Us</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="content-section">
         <div class="container">
-            <h2>What makes us unique</h2>
-            <p>
-                We are not only interested in showing new trends, but we also want you to be educated on all matters pertaining to the health sector. Your health journey starts here — subscribe to our newsletter today and experience care you can trust.
-            </p>
+            <a href="index.html" class="logo" aria-label="HCW Home">HCW</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="goals.html">Goals</a></li>
+                <li><a href="targets.html">Target</a></li>
+                <li><a href="Contacts.html">Contacts</a></li>
+                <li>
+                    <button id="theme-toggle" class="nav-toggle" aria-label="Toggle theme">
+                        <span id="theme-text">Dark Mode</span></button>
+                </li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
         </div>
-    </section>
+    </nav>
+    <main>
+        <!-- Hero Section -->
+        <section id="Home" class="hero-section">
+            <div class="hero-content">
+                <h1>Your health is our priority</h1>
+                <p>
+                    Welcome to HCW, where compassionate care meets medical excellence. We are dedicated to keeping you
+                    and your loved ones healthy through personalized learning, new technologies in the medical field,
+                    and a team of experienced professionals who always update you on the latest trends in healthcare.
+                </p>
+                <div class="btn-group">
+                    <a href="about.html" class="btn btn-primary">Learn More</a>
+                    <a href="contacts.html" class="btn btn-secondary">Talk to Us</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Section -->
+        <section class="content-section" id="About">
+            <div class="container">
+                <h2>What makes us unique</h2>
+                <p>
+                    We are not only interested in showing new trends, but we also want you to be educated on all matters
+                    pertaining to the health sector. Your health journey starts here — subscribe to our newsletter today
+                    and experience care you can trust.
+                </p>
+                <div class="cards-container">
+                    <div class="content-card">
+                        <h3>Personalized Learning</h3>
+                        <p>We provide curated content and resources tailored to your health interests and needs.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>Latest Technologies</h3>
+                        <p>Stay informed about the cutting-edge innovations in the medical field that are shaping the
+                            future of care.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>Experienced Professionals</h3>
+                        <p>Our content is vetted by a team of experts dedicated to providing accurate and reliable
+                            information.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
     <footer class="main-footer">
-    <div class="container">
-        <div class="footer-content">
-            <p>&copy; 2025 HCW. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#">Facebook</a>
-                <a href="#">Twitter</a>
-                <a href="#">LinkedIn</a>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 HCW. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">LinkedIn</a>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
-
+    </footer>
+    <script src="script.js"></script>
 </body>
+
 </html>

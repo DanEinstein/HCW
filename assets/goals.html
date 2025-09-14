@@ -10,14 +10,25 @@
 <body>
     
     <nav class="navbar">
-        <a href="index.html" class="logo" aria-label="HCW Home">HCW</a>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="goals.html">Goals</a></li>
-            <li><a href="targets.html">Target</a></li>
-            <li><a href="Contacts.html">Contacts</a></li>
-        </ul>
+        <div class="container">
+            <a href="index.html" class="logo" aria-label="HCW Home">HCW</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="goals.html">Goals</a></li>
+                <li><a href="targets.html">Target</a></li>
+                <li><a href="Contacts.html">Contacts</a></li>
+                <li>
+                    <button id="theme-toggle" class="nav-toggle" aria-label="Toggle theme">
+                        <span id="theme-text">Dark Mode</span></button>
+                </li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
     </nav>
     
     <section id="goals-hero" class="hero-section">
@@ -29,22 +40,24 @@
         </div>
     </section>
     
-    <section class="goals-content">
-        <div class="container">
-            <div class="goal-item">
-                <h3>1. To Educate and Inform</h3>
-                <p>Provide reliable, evidence-based healthcare information in an accessible format to empower individuals to take control of their health.</p>
+    <main>
+        <section class="goals-content">
+            <div class="container">
+                <div class="goal-item">
+                    <h3>1. To Educate and Inform</h3>
+                    <p>Provide reliable, evidence-based healthcare information in an accessible format to empower individuals to take control of their health.</p>
+                </div>
+                <div class="goal-item">
+                    <h3>2. To Foster Innovation</h3>
+                    <p>Highlight the latest advancements in medical technology and research, keeping our audience at the forefront of healthcare trends.</p>
+                </div>
+                <div class="goal-item">
+                    <h3>3. To Build a Community</h3>
+                    <p>Create an interactive platform where users can engage, share experiences, and support each other on their health journeys.</p>
+                </div>
             </div>
-            <div class="goal-item">
-                <h3>2. To Foster Innovation</h3>
-                <p>Highlight the latest advancements in medical technology and research, keeping our audience at the forefront of healthcare trends.</p>
-            </div>
-            <div class="goal-item">
-                <h3>3. To Build a Community</h3>
-                <p>Create an interactive platform where users can engage, share experiences, and support each other on their health journeys.</p>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
     <footer class="main-footer">
     <div class="container">
         <div class="footer-content">
@@ -59,4 +72,5 @@
 </footer>
 
 </body>
+<script src="script.js"></script>
 </html>

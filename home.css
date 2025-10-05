@@ -1,5 +1,3 @@
-/* Homepage specific styles */
-
 /* Hero Section */
 #Home {
     position: relative;
@@ -21,7 +19,7 @@
     width: 100%;
     height: 100%;
     
-    background-image: url('../images/emergency.jpg');
+    background-image: url('assets/images/emergency.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

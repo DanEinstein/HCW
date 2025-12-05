@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeText = document.getElementById('theme-text');
     // Hamburger menu button (create if not present)
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const navLinks = document.querySelector('.nav-links');    
+    const navLinks = document.querySelector('.nav-links');
     const form=document.getElementById('contact-form');
     // Hamburger menu toggle logic
     if (mobileMenuToggle && navLinks) {
@@ -19,23 +19,32 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateTheme(isDarkMode) {
         body.classList.toggle('dark-mode', isDarkMode);
         body.classList.toggle('light-mode', !isDarkMode);
+
+        // Update button text if it exists (handles both span and button text)
         if (themeText) {
             themeText.textContent = isDarkMode ? 'Light Mode' : 'Dark Mode';
+        } else if (themeToggleBtn) {
+             themeToggleBtn.textContent = isDarkMode ? 'Light Mode' : 'Dark Mode';
         }
+
         localStorage.setItem('hcw-theme', isDarkMode ? 'dark' : 'light');
     }
 
     // Set initial theme from localStorage or system preference
     const savedTheme = localStorage.getItem('hcw-theme');
     let isDark = false;
+
     if (savedTheme === 'dark') {
         isDark = true;
     } else if (savedTheme === 'light') {
         isDark = false;
     } else {
+        // Default to system preference if no saved theme
         const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
         isDark = prefersDarkScheme.matches;
     }
+
+    // Apply initial theme
     updateTheme(isDark);
 
     // Theme toggle button logic
@@ -58,5 +67,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    
+
 });

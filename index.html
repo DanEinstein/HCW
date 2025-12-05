@@ -2,102 +2,190 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HCW - Your Health, Our Priority</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Global.css">
-    <link rel="stylesheet" href="index.css">
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HCW – Healthcare & Wellness Center</title>
+  <meta name="description"
+    content="Instant, reliable health information and AI-powered symptom analysis. Trusted answers, available 24/7 with complete privacy.">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Inter Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Global Styles (includes dark mode, footer fixes, etc.) -->
+  <link rel="stylesheet" href="Global.css">
+
+  <style>
+    :root {
+      --primary: #0061a8;
+      --primary-light: #e6f0fa;
+      --success: #2e8b57;
+    }
+    .btn-primary { background-color: var(--primary); border-color: var(--primary); }
+    .btn-primary:hover { background-color: #004c87; border-color: #004c87; }
+    .text-primary { color: var(--primary) !important; }
+    .bg-gradient-hero { background: linear-gradient(135deg, #f8fafc 0%, #e6f0fa 100%); }
+    .hero-card { transition: all 0.3s ease; }
+    .hero-card:hover { transform: translateY(-12px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+    .stat-number { font-size: 3.5rem; font-weight: 800; }
+    @media (max-width: 768px) { .stat-number { font-size: 2.5rem; } }
+  </style>
 </head>
 
 <body class="light-mode">
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo" aria-label="HCW Home">HCW</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="goals.html">Goals</a></li>
-                <li><a href="targets.html">Target</a></li>
-                <li><a href="Contacts.html">Contacts</a></li>
-                <li>
-                    <button id="theme-toggle" class="nav-toggle" aria-label="Toggle theme">
-                        <span id="theme-text">Dark Mode</span></button>
-                </li>
-            </ul>
-            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
-            </button>
+  <!-- Navigation -->
+  <header class="fixed-top bg-white shadow-sm border-bottom navbar">
+    <nav class="navbar navbar-expand-lg py-3">
+      <div class="container">
+        <a class="navbar-brand fw-bold fs-2 text-primary" href="index.html">HCW</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-4">
+            <li class="nav-item"><a class="nav-link active fw-medium" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link fw-medium" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link fw-medium" href="goals.html">Our Mission</a></li>
+            <li class="nav-item"><a class="nav-link fw-medium" href="targets.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link fw-medium" href="Contacts.html">Contact</a></li>
+            <li class="nav-item d-none d-lg-block">
+              <a href="chat.html" class="btn btn-primary px-5">AI Health Assistant</a>
+            </li>
+            <li class="nav-item">
+              <button id="theme-toggle" class="btn btn-outline-secondary btn-sm" aria-label="Toggle dark mode">Dark Mode</button>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
-    <main>
-        <!-- Hero Section -->
-        <section id="Home" class="hero-section">
-            <div class="hero-content">
-                <h1>Your health is our priority</h1>
-                <p>
-                    Welcome to HCW, where compassionate care meets medical excellence. We are dedicated to keeping you
-                    and your loved ones healthy through personalized learning, new technologies in the medical field,
-                    and a team of experienced professionals who always update you on the latest trends in healthcare.
-                </p>
-                <div class="btn-group">
-                    <a href="about.html" class="btn btn-primary">Learn More</a>
-                    <a href="contacts.html" class="btn btn-secondary">Talk to Us</a>
-                </div>
-            </div>
-        </section>
+  </header>
 
-        <!-- Content Section -->
-        <section class="content-section" id="About">
-            <div class="container">
-                <h2>What makes us unique</h2>
-                <p>
-                    We are not only interested in showing new trends, but we also want you to be educated on all matters
-                    pertaining to the health sector. Your health journey starts here — subscribe to our newsletter today
-                    and experience care you can trust.
-                </p>
-                <div class="cards-container">
-                    <div class="content-card">
-                        <h3>Personalized Learning</h3>
-                        <p>We provide curated content and resources tailored to your health interests and needs.</p>
-                    </div>
-                    <div class="content-card">
-                        <h3>Latest Technologies</h3>
-                        <p>Stay informed about the cutting-edge innovations in the medical field that are shaping the
-                            future of care.</p>
-                    </div>
-                    <div class="content-card">
-                        <h3>Experienced Professionals</h3>
-                        <p>Our content is vetted by a team of experts dedicated to providing accurate and reliable
-                            information.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <main class="pt-5">
 
-    </main>
+    <!-- Hero Section -->
+    <section class="hero-section bg-gradient-hero">
+      <div class="container py-5 py-lg-7">
+        <div class="row align-items-center g-5 min-vh-75">
+          <div class="col-lg-7">
+            <h1 class="display-3 fw-bold lh-1 mb-4">
+              Care that never stops.<br>
+              <span class="text-primary">Answers you can trust.</span>
+            </h1>
+            <p class="lead text-muted mb-5">
+              Get instant, evidence-based insights about symptoms, conditions, and wellness — powered by advanced AI and available 24/7 with complete privacy.
+            </p>
 
-    <!-- Footer -->
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 HCW. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="#">Facebook</a>
-                    <a href="#">Twitter</a>
-                    <a href="#">LinkedIn</a>
-                </div>
+            <div class="d-flex flex-column flex-sm-row gap-3 mb-5">
+              <a href="chat.html" class="btn btn-primary btn-lg px-5">Start Free Health Chat</a>
+              <a href="about.html" class="btn btn-outline-primary btn-lg">Learn More</a>
             </div>
+
+            <div class="row g-5 text-center text-sm-start">
+              <div class="col">
+                <div class="stat-number text-success">24/7</div>
+                <small class="text-muted fw-medium">Always Available</small>
+              </div>
+              <div class="col">
+                <div class="stat-number text-success">100+</div>
+
+                <small class="text-muted fw-medium">Health Topics</small>
+              </div>
+              <div class="col">
+                <div class="stat-number text-success">10+</div>
+
+                <small class="text-muted fw-medium">Test users</small>
+              </div>
+              <div class="col">
+                <div class="stat-number text-success">3+</div>
+
+                <small class="text-muted fw-medium">medical professionals</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 text-center">
+            <img src="assets/images/masks.jpg" class="img-fluid rounded-4 shadow-lg hero-card" alt="Doctor consulting with patient">
+          </div>
         </div>
-    </footer>
-    <script src="script.js"></script>
-</body>
+      </div>
+    </section>
 
+    <!-- Wellness Tip -->
+    <section class="py-5 bg-light-subtle">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="h3 fw-bold">Today’s Wellness Tip</h2>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div id="health-tip-home" class="health-tip-card p-4 rounded shadow-sm"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section py-5 text-white text-center">
+      <div class="container py-5">
+        <h2 class="display-5 fw-bold mb-3">Ready for answers you can trust?</h2>
+        <p class="lead mb-4 opacity-90">Start a conversation with our AI Health Assistant — available now, no login required.</p>
+        <a href="chat.html" class="btn btn-light btn-lg px-5">Start Your Free Consultation</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer – Now fully compatible with Global.css dark/light mode switch -->
+  <footer class="site-footer">
+    <div class="container py-5">
+      <div class="row g-5">
+        <div class="col-lg-5">
+          <a href="index.html" class="text-decoration-none">
+            <h3 class="fw-bold text-primary mb-3">HCW</h3>
+          </a>
+          <p class="text-muted">Delivering reliable health information and AI-powered guidance since 2025.</p>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="fw-bold mb-3">Quick Links</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about.html" class="text-decoration-none">About</a></li>
+            <li class="mb-2"><a href="goals.html" class="text-decoration-none">Our Mission</a></li>
+            <li class="mb-2"><a href="chat.html" class="text-decoration-none">AI Assistant</a></li>
+            <li class="mb-2"><a href="Contacts.html" class="text-decoration-none">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="fw-bold mb-3">Legal</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#" class="text-decoration-none">Privacy Policy</a></li>
+            <li class="mb-2"><a href="#" class="text-decoration-none">Terms of Service</a></li>
+            <li class="mb-2"><a href="#" class="text-decoration-none">Medical Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="my-4 opacity-50">
+      <div class="text-center text-muted small">
+        <p class="mb-1">© 2025 Healthcare & Wellness Center. All rights reserved.</p>
+        <p class="mb-0">This platform provides general health information and is not a substitute for professional medical advice, diagnosis, or treatment.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+  <script src="health-tips.js"></script>
+  <script>
+    // Health tip component
+    if (typeof HealthTipsComponent !== 'undefined') {
+      new HealthTipsComponent('health-tip-home', {
+        interval: 9000,
+        autoRotate: true
+      });
+    }
+  </script>
+</body>
 </html>

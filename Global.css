@@ -1,357 +1,284 @@
+/* Global.css – FINAL VERSION (Footer + Dark Mode 100% Fixed)
+   December 2025 – HCW Healthcare & Wellness Center */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========================================
+   CSS Variables
+   ======================================== */
 :root {
-    --primary-color: #3B82F6;
-    --secondary-color: #60A5FA;
-    --dark-bg: #1F2937;
-    --dark-text: #F3F4F6;
-    --light-bg: #FFFFFF;
-    --light-text: #1F2937;
-    --gray-text: #6B7280;
+  --primary: #0061a8;
+  --primary-hover: #004c87;
+  --primary-light: #e6f0fa;
+  --success: #2e8b57;
+  --dark-bg: #0f172a;
+  --dark-card: #1e293b;
+  --dark-border: #334155;
+  --text-light: #f1f5f9;
+  --text-muted-light: #94a3b8;
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
+/* ========================================
+   Base
+   ======================================== */
 body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    color: var(--light-text);
-    background-color: var(--light-bg);
-    transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: var(--font-family);
+  line-height: 1.6;
+  color: #1e293b;
+  background-color: #ffffff;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
+/* ========================================
+   Dark Mode – Perfect
+   ======================================== */
 .dark-mode {
-    background-color: var(--dark-bg);
-    color: var(--dark-text);
+  background-color: var(--dark-bg);
+  color: var(--text-light);
 }
 
-.dark-mode .navbar {
-    background-color: #374151;
+.dark-mode .bg-white,
+.dark-mode .navbar,
+.dark-mode .chat-sidebar,
+.dark-mode .chat-area,
+.dark-mode .card,
+.dark-mode .health-tip-card,
+.dark-mode .site-footer {               /* ← Footer fixed */
+  background-color: var(--dark-bg) !important;
 }
 
-.dark-mode .nav-links a {
-    color: var(--dark-text);
+.dark-mode .bg-light,
+.dark-mode .bg-light-subtle {
+  background-color: var(--dark-card) !important;
 }
 
-.dark-mode .content-section,
-.dark-mode .footer-content p,
-.dark-mode .footer-content a {
-    color: var(--dark-text);
+.dark-mode .border,
+.dark-mode .border-bottom,
+.dark-mode .card,
+.dark-mode .chat-sidebar,
+.dark-mode .chat-area,
+.dark-mode .form-control,
+.dark-mode .health-tip-card {
+  border-color: var(--dark-border) !important;
 }
 
-.dark-mode .content-section h2 {
-    color: var(--secondary-color);
+.dark-mode .text-muted {
+  color: var(--text-muted-light) !important;
 }
 
-.dark-mode .content-card {
-    background-color: #374151;
-    box-shadow: 0 10px 15px -3px rgba(255, 255, 255, 0.1), 0 4px 6px -2px rgba(255, 255, 255, 0.05);
+.dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4,
+.dark-mode h5, .dark-mode h6, .dark-mode .display-1,
+.dark-mode .display-2, .dark-mode .display-3,
+.dark-mode .display-4, .dark-mode .display-5,
+.dark-mode .display-6 {
+  color: #f8fafc !important;
 }
 
-.dark-mode .content-card h3 {
-    color: var(--secondary-color);
+/* ========================================
+   Footer – Light & Dark Mode Perfection
+   ======================================== */
+/* Footer Light Mode Background and Link Colors */
+.site-footer {
+  background-color: #000000; /* Black background in light mode */
+  color: #ffffff; /* White text in light mode */
+  padding: 20px 0;
+  text-align: center;
+  border-top: 1px solid #dee2e6;
 }
 
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
+.site-footer a {
+  color: #ffffff; /* White links in light mode */
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.navbar {
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    transition: background-color 0.3s ease;
+.site-footer a:hover {
+  color: var(--primary-light); /* Light blue on hover */
+  text-decoration: underline;
 }
 
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.75rem 1rem;
+.site-footer .fw-bold,
+.site-footer h3,
+.site-footer h6 {
+  color: white !important;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: transform 0.3s ease;
+.site-footer .text-muted {
+  color: #cbd5e1 !important; /* Lighter muted text for contrast on black */
 }
 
-.logo:hover {
-    transform: scale(1.05);
+/* Dark mode footer - ensure it stays dark */
+.dark-mode .site-footer {
+  background-color: var(--dark-bg) !important;
+  border-top-color: var(--dark-border);
 }
 
-.nav-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
+.dark-mode .site-footer a {
+  color: #e2e8f0;
 }
 
-.nav-links a {
-    color: var(--gray-text);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s ease;
+.dark-mode .site-footer a:hover {
+  color: var(--primary);
 }
 
-.nav-links a:hover {
-    color: var(--primary-color);
-}
-
-.mobile-menu-toggle {
-    display: none; /* Hidden by default on larger screens */
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 1002; /* Ensure it's above the nav-links */
-    position: relative; /* Needed for z-index and absolute positioning of children */
-    width: 25px;
-    height: 21px;
-}
-
-.mobile-menu-toggle .hamburger {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: var(--light-text); /* Black in light mode */
-    margin: 6px 0;
-    transition: transform 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
-    border-radius: 2px;
-}
-
-.dark-mode .mobile-menu-toggle .hamburger {
-    background-color: var(--dark-text); /* White in dark mode */
-}
-
-/* Animation to 'X' when .active is on nav-links */
-.mobile-menu-toggle[aria-expanded="true"] .hamburger:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
-}
-
-.mobile-menu-toggle[aria-expanded="true"] .hamburger:nth-child(2) {
-    opacity: 0;
-}
-
-.mobile-menu-toggle[aria-expanded="true"] .hamburger:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
-}
-
-
-.nav-toggle {
-    background: none;
-    border: 1px solid #ccc;
-    padding: 0.5rem 1rem;
-    border-radius: 9999px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-.nav-toggle:hover {
-    background-color: #f3f4f6;
-}
-
-.hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://placehold.co/1920x1080/1F2937/F3F4F6?text=Medical+Excellence) no-repeat center center/cover;
-    color: #fff;
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding-top: 6rem;
-}
-
-.hero-content {
-    max-width: 600px;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 2rem;
-    border-radius: 0.75rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.hero-content h1 {
-    font-size: 2.25rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
-
-.hero-content p {
-    font-size: 1.125rem;
-    margin-bottom: 2rem;
-}
-
-.btn-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-
-@media (min-width: 768px) {
-    .btn-group {
-        flex-direction: row;
-        justify-content: center;
-        gap: 1rem;
-    }
-}
-
-.btn {
-    padding: 0.75rem 1.5rem;
-    border-radius: 9999px;
-    font-weight: 500;
-    text-decoration: none;
-    transition: transform 0.3s ease;
-}
+/* ========================================
+   Primary Buttons & Text
+   ======================================== */
+.text-primary { color: var(--primary) !important; }
 
 .btn-primary {
-    background-color: var(--primary-color);
-    color: #fff;
-    border: 1px solid var(--primary-color);
+  background-color: var(--primary);
+  border-color: var(--primary);
 }
 
-.btn-primary:hover {
-    background-color: #2563eb;
-    transform: scale(1.05);
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--primary-hover) !important;
+  border-color: var(--primary-hover) !important;
 }
 
-.btn-secondary {
-    background-color: transparent;
-    color: var(--primary-color);
-    border: 1px solid var(--primary-color);
+.btn-outline-primary:hover {
+  background-color: var(--primary);
+  color: white;
 }
 
-.btn-secondary:hover {
-    background-color: var(--primary-color);
-    color: #fff;
-    transform: scale(1.05);
+/* ========================================
+   Navigation
+   ======================================== */
+.navbar { transition: all 0.4s ease; backdrop-filter: blur(12px); }
+
+.dark-mode .navbar {
+  background-color: rgba(15, 23, 42, 0.95) !important;
+  border-bottom: 1px solid var(--dark-border) !important;
 }
 
-.content-section {
-    padding: 4rem 0;
-    text-align: center;
+.nav-link:hover,
+.nav-link.active { color: var(--primary) !important; }
+
+/* ========================================
+   Hero Sections
+   ======================================== */
+.bg-gradient-hero,
+.hero-about,
+.hero-goals,
+.hero-targets,
+.hero-contact {
+  background: linear-gradient(135deg, #f8fafc 0%, var(--primary-light) 100%);
 }
 
-.content-section h2 {
-    font-size: 2.25rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
+.dark-mode .bg-gradient-hero,
+.dark-mode .hero-about,
+.dark-mode .hero-goals,
+.dark-mode .hero-targets,
+.dark-mode .hero-contact {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
 }
 
-.content-section p {
-    max-width: 800px;
-    margin: 0 auto 2rem;
-    font-size: 1.125rem;
+/* ========================================
+   Cards & Hover
+   ======================================== */
+.hero-card,
+.team-card,
+.goal-card,
+.target-card,
+.feature-card,
+.health-tip-card,
+.prediction-item {
+  transition: all 0.4s ease;
+  background: white;
+  border: 1px solid #e2e8f0;
 }
 
-.cards-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    margin-top: 2rem;
+.dark-mode .hero-card,
+.dark-mode .team-card,
+.dark-mode .goal-card,
+.dark-mode .target-card,
+.dark-mode .feature-card,
+.dark-mode .health-tip-card,
+.dark-mode .prediction-item {
+  background: var(--dark-card) !important;
+  border-color: var(--dark-border) !important;
 }
 
-@media (min-width: 768px) {
-    .cards-container {
-        grid-template-columns: repeat(3, 1fr);
-    }
+.hero-card:hover,
+.team-card:hover,
+.goal-card:hover,
+.target-card:hover,
+.feature-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12) !important;
 }
 
-.content-card {
-    padding: 1.5rem;
-    background-color: #fff;
-    border-radius: 0.75rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+.dark-mode .hero-card:hover,
+.dark-mode .team-card:hover,
+.dark-mode .goal-card:hover,
+.dark-mode .target-card:hover {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5) !important;
 }
 
-.content-card:hover {
-    transform: scale(1.05);
+/* ========================================
+   Chat Page – Dark Mode Fixed
+   ======================================== */
+.dark-mode .assistant-message .message-content {
+  background: #334155 !important;
+  color: #f1f5f9 !important;
 }
 
-.content-card h3 {
-    font-weight: bold;
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-    color: var(--primary-color);
+.dark-mode .chat-input {
+  background: var(--dark-card) !important;
+  color: #f1f5f9 !important;
+  border-color: var(--dark-border) !important;
 }
 
-.main-footer {
-    background-color: var(--primary-color);
-    color: #fff;
-    padding: 2rem 0;
-    text-align: center;
+.dark-mode .predictions-panel {
+  background: rgba(0,97,168,0.12) !important;
+  border-color: rgba(0,97,168,0.3) !important;
 }
 
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+.dark-mode .prediction-item {
+  background: #334155 !important;
 }
 
-@media (min-width: 768px) {
-    .footer-content {
-        flex-direction: row;
-    }
+/* ========================================
+   CTA & Emergency
+   ======================================== */
+.cta-section {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+  color: white;
 }
 
-.social-links a {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 1rem;
-    transition: color 0.2s ease;
+.emergency-banner {
+  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+  color: white;
+  animation: pulse 2s ease-in-out infinite;
 }
 
-.social-links a:hover {
-    color: #bfdbfe;
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.9; }
 }
 
-/* Responsive Navigation Styles */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--light-bg);
-        padding: 1rem 0;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        z-index: 1001;
-    }
-    .nav-links.active {
-        display: flex;
-    }
-    .mobile-menu-toggle {
-        display: block;
-    }
-    .navbar .container {
-        flex-direction: row;
-        align-items: center;
-    }
+/* ========================================
+   Form Controls
+   ======================================== */
+.form-control:focus,
+.chat-input:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 0.25rem rgba(0,97,168,.15) !important;
 }
 
-@media (max-width: 768px) {
-    .cards-container {
-        grid-template-columns: 1fr;
-    }
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-    }
-    .hero-content {
-        padding: 1rem;
-    }
+/* Dark Mode Hamburger Menu Fix */
+.dark-mode .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.dark-mode .navbar-toggler-icon {
+  filter: invert(1) grayscale(100%) brightness(200%);
 }
